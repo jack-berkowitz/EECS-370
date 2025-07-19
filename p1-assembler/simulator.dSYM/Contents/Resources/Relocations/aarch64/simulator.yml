@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/jackberkowitz/Desktop/eecs370/p1-assembler/simulator'
+relocations:     []
+...

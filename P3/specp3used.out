@@ -1,0 +1,4423 @@
+instruction memory:
+	instrMem[ 0 ] = 0x0081000E ( lw 0 1 14 )
+	instrMem[ 1 ] = 0x0082000F ( lw 0 2 15 )
+	instrMem[ 2 ] = 0x0113000A ( beq 2 3 10 )
+	instrMem[ 3 ] = 0x00000004 ( add 0 0 4 )
+	instrMem[ 4 ] = 0x011C0006 ( beq 3 4 6 )
+	instrMem[ 5 ] = 0x009E0010 ( lw 3 6 16 )
+	instrMem[ 6 ] = 0x00A70010 ( lw 4 7 16 )
+	instrMem[ 7 ] = 0x01370001 ( beq 6 7 1 )
+	instrMem[ 8 ] = 0x000D0005 ( add 1 5 5 )
+	instrMem[ 9 ] = 0x000C0004 ( add 1 4 4 )
+	instrMem[ 10 ] = 0x0100FFF9 ( beq 0 0 -7 )
+	instrMem[ 11 ] = 0x000B0003 ( add 1 3 3 )
+	instrMem[ 12 ] = 0x0100FFF5 ( beq 0 0 -11 )
+	instrMem[ 13 ] = 0x01800000 ( halt )
+	instrMem[ 14 ] = 0x00000001 ( add 0 0 1 )
+	instrMem[ 15 ] = 0x00000003 ( add 0 0 3 )
+	instrMem[ 16 ] = 0x00000000 ( add 0 0 0 )
+	instrMem[ 17 ] = 0x00000001 ( add 0 0 1 )
+	instrMem[ 18 ] = 0x00000000 ( add 0 0 0 )
+
+@@@
+state before cycle 0 starts:
+	pc = 0
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 0
+		reg[ 2 ] = 0
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 0 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 0 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 0 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 1 starts:
+	pc = 1
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 0
+		reg[ 2 ] = 0
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0081000E ( lw 0 1 14 )
+		pcPlus1 = 1
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 0 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 0 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 2 starts:
+	pc = 2
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 0
+		reg[ 2 ] = 0
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0082000F ( lw 0 2 15 )
+		pcPlus1 = 2
+	ID/EX pipeline register:
+		instruction = 0x0081000E ( lw 0 1 14 )
+		pcPlus1 = 1
+		readRegA = 0
+		readRegB = 0 (Don't Care)
+		offset = 14
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 0 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 3 starts:
+	pc = 2
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 0
+		reg[ 2 ] = 0
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 3 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x0082000F ( lw 0 2 15 )
+		pcPlus1 = 2
+		readRegA = 0
+		readRegB = 0 (Don't Care)
+		offset = 15
+	EX/MEM pipeline register:
+		instruction = 0x0081000E ( lw 0 1 14 )
+		branchTarget 15 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 14
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 4 starts:
+	pc = 3
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 0
+		reg[ 2 ] = 0
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 3 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0082000F ( lw 0 2 15 )
+		branchTarget 17 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 15
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0081000E ( lw 0 1 14 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 5 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 0
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+	ID/EX pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+		readRegA = 0
+		readRegB = 0
+		offset = 10
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 3 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0082000F ( lw 0 2 15 )
+		writeData = 3
+	WB/END pipeline register:
+		instruction = 0x0081000E ( lw 0 1 14 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 6 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+		readRegA = 0
+		readRegB = 0
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		branchTarget 13
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0082000F ( lw 0 2 15 )
+		writeData = 3
+end state
+
+@@@
+state before cycle 7 starts:
+	pc = 6
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+	ID/EX pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+		readRegA = 0
+		readRegB = 0
+		offset = 6
+	EX/MEM pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 8 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+	ID/EX pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+		readRegA = 0
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		branchTarget 11
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 9 starts:
+	pc = 11
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 11 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 7 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 16 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 22 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 16 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 10 starts:
+	pc = 12
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 11 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 23 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 11 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+	ID/EX pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+		readRegA = 1
+		readRegB = 0
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 11 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 12 starts:
+	pc = 14
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+	ID/EX pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+		readRegA = 0
+		readRegB = 0
+		offset = -11
+	EX/MEM pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		branchTarget 15 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 1
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 13 starts:
+	pc = 15
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 0
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00000001 ( add 0 0 1 )
+		pcPlus1 = 15
+	ID/EX pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		branchTarget 2
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 14 starts:
+	pc = 2
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 2 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 15 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 1 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 15 starts:
+	pc = 3
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 2 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 16 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 16 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+	ID/EX pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+		readRegA = 3
+		readRegB = 1
+		offset = 10
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 2 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 17 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+		readRegA = 0
+		readRegB = 0
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		branchTarget 13
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 18 starts:
+	pc = 6
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+	ID/EX pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+		readRegA = 1
+		readRegB = 0
+		offset = 6
+	EX/MEM pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 19 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+	ID/EX pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+		readRegA = 1
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		branchTarget 11
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 20 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 8 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+		readRegA = 0
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		branchTarget 22 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 17
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 21 starts:
+	pc = 8
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		pcPlus1 = 8
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 8 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		branchTarget 23 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 16
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 22 starts:
+	pc = 9
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		pcPlus1 = 9
+	ID/EX pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		pcPlus1 = 8
+		readRegA = 0
+		readRegB = 0
+		offset = 1
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 23 starts:
+	pc = 10
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+	ID/EX pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		pcPlus1 = 9
+		readRegA = 1
+		readRegB = 0
+		offset = 5 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		branchTarget 9
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 24 starts:
+	pc = 11
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		pcPlus1 = 11
+	ID/EX pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+		readRegA = 1
+		readRegB = 0
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		branchTarget 14 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 1
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 25 starts:
+	pc = 12
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 0
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+	ID/EX pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		pcPlus1 = 11
+		readRegA = 0
+		readRegB = 0
+		offset = -7
+	EX/MEM pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		branchTarget 14 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 1
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 26 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+	ID/EX pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+		readRegA = 1
+		readRegB = 1
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		branchTarget 4
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 27 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 4 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 13 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = -11 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 15 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 2 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 28 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 4 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 2 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 29 starts:
+	pc = 6
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+	ID/EX pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+		readRegA = 1
+		readRegB = 1
+		offset = 6
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 4 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 30 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+	ID/EX pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+		readRegA = 1
+		readRegB = 1 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		branchTarget 11
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 31 starts:
+	pc = 11
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 11 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 7 (Don't Care)
+		readRegA = 1 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 16 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 22 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 17 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 32 starts:
+	pc = 12
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 11 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 23 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 33 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+	ID/EX pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+		readRegA = 1
+		readRegB = 1
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 11 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 34 starts:
+	pc = 14
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+	ID/EX pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+		readRegA = 0
+		readRegB = 0
+		offset = -11
+	EX/MEM pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		branchTarget 15 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 2
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 35 starts:
+	pc = 15
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 1
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00000001 ( add 0 0 1 )
+		pcPlus1 = 15
+	ID/EX pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		branchTarget 2
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		writeData = 2
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 36 starts:
+	pc = 2
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 2 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 15 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 1 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		writeData = 2
+end state
+
+@@@
+state before cycle 37 starts:
+	pc = 3
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 2 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 16 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 38 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+	ID/EX pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+		readRegA = 3
+		readRegB = 2
+		offset = 10
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 2 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 39 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+		readRegA = 0
+		readRegB = 0
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		branchTarget 13
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 2 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 40 starts:
+	pc = 6
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+	ID/EX pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+		readRegA = 2
+		readRegB = 1
+		offset = 6
+	EX/MEM pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 41 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+	ID/EX pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+		readRegA = 2
+		readRegB = 1 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		branchTarget 11
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 42 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 8 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+		readRegA = 1
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		branchTarget 22 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 18
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 43 starts:
+	pc = 8
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 1
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		pcPlus1 = 8
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 8 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		branchTarget 23 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 16
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 44 starts:
+	pc = 9
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		pcPlus1 = 9
+	ID/EX pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		pcPlus1 = 8
+		readRegA = 1
+		readRegB = 0
+		offset = 1
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 45 starts:
+	pc = 10
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+	ID/EX pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		pcPlus1 = 9
+		readRegA = 1
+		readRegB = 1
+		offset = 5 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		branchTarget 9
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 46 starts:
+	pc = 9
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 9 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 10 (Don't Care)
+		readRegA = 1 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 2 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 47 starts:
+	pc = 10
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 9 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 14 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 48 starts:
+	pc = 11
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		pcPlus1 = 11
+	ID/EX pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+		readRegA = 1
+		readRegB = 0
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 9 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 49 starts:
+	pc = 12
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+	ID/EX pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		pcPlus1 = 11
+		readRegA = 0
+		readRegB = 0
+		offset = -7
+	EX/MEM pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		branchTarget 14 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 1
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 50 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 0
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+	ID/EX pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+		readRegA = 1
+		readRegB = 2
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		branchTarget 4
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 51 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 4 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 13 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = -11 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 15 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 3 (Don't Care)
+		readRegB = 2 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 52 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 4 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 2 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 53 starts:
+	pc = 6
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+	ID/EX pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+		readRegA = 2
+		readRegB = 1
+		offset = 6
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 4 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 54 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+	ID/EX pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+		readRegA = 2
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		branchTarget 11
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 55 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 8 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+		readRegA = 1
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		branchTarget 22 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 18
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 56 starts:
+	pc = 8
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		pcPlus1 = 8
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 8 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		branchTarget 23 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 17
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		writeData = 0
+	WB/END pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 57 starts:
+	pc = 9
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 0
+	IF/ID pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		pcPlus1 = 9
+	ID/EX pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		pcPlus1 = 8
+		readRegA = 0
+		readRegB = 0
+		offset = 1
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		writeData = 1
+	WB/END pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		writeData = 0
+end state
+
+@@@
+state before cycle 58 starts:
+	pc = 10
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+	ID/EX pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		pcPlus1 = 9
+		readRegA = 1
+		readRegB = 1
+		offset = 5 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		branchTarget 9
+		eq ? False
+		aluResult = 0 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		writeData = 1
+end state
+
+@@@
+state before cycle 59 starts:
+	pc = 11
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		pcPlus1 = 11
+	ID/EX pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		pcPlus1 = 10
+		readRegA = 1
+		readRegB = 1
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 2
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 60 starts:
+	pc = 12
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 1
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+	ID/EX pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		pcPlus1 = 11
+		readRegA = 0
+		readRegB = 0
+		offset = -7
+	EX/MEM pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 2
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		writeData = 2
+	WB/END pipeline register:
+		instruction = 0x01370001 ( beq 6 7 1 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 61 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 1
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+	ID/EX pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+		readRegA = 1
+		readRegB = 2
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		branchTarget 4
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		writeData = 2
+	WB/END pipeline register:
+		instruction = 0x000D0005 ( add 1 5 5 )
+		writeData = 2
+end state
+
+@@@
+state before cycle 62 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 4 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 13 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = -11 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 15 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 3 (Don't Care)
+		readRegB = 2 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x000C0004 ( add 1 4 4 )
+		writeData = 2
+end state
+
+@@@
+state before cycle 63 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 4 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 2 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0100FFF9 ( beq 0 0 -7 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 64 starts:
+	pc = 6
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+	ID/EX pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+		readRegA = 2
+		readRegB = 2
+		offset = 6
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 4 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 65 starts:
+	pc = 7
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x00A70010 ( lw 4 7 16 )
+		pcPlus1 = 7
+	ID/EX pipeline register:
+		instruction = 0x009E0010 ( lw 3 6 16 )
+		pcPlus1 = 6
+		readRegA = 2
+		readRegB = 0 (Don't Care)
+		offset = 16
+	EX/MEM pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		branchTarget 11
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 2 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 66 starts:
+	pc = 11
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 11 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 7 (Don't Care)
+		readRegA = 2 (Don't Care)
+		readRegB = 1 (Don't Care)
+		offset = 16 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 22 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 18 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 67 starts:
+	pc = 12
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 11 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 23 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 1 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 68 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+	ID/EX pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		pcPlus1 = 12
+		readRegA = 1
+		readRegB = 2
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 11 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 69 starts:
+	pc = 14
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+	ID/EX pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		pcPlus1 = 13
+		readRegA = 0
+		readRegB = 0
+		offset = -11
+	EX/MEM pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		branchTarget 15 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 3
+		readRegB = 2 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 70 starts:
+	pc = 15
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 2
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x00000001 ( add 0 0 1 )
+		pcPlus1 = 15
+	ID/EX pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		branchTarget 2
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		writeData = 3
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 71 starts:
+	pc = 2
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 2 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 15 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 1 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x000B0003 ( add 1 3 3 )
+		writeData = 3
+end state
+
+@@@
+state before cycle 72 starts:
+	pc = 3
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 2 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 16 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0100FFF5 ( beq 0 0 -11 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 73 starts:
+	pc = 4
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+	ID/EX pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		pcPlus1 = 3
+		readRegA = 3
+		readRegB = 3
+		offset = 10
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 2 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 74 starts:
+	pc = 5
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x011C0006 ( beq 3 4 6 )
+		pcPlus1 = 5
+	ID/EX pipeline register:
+		instruction = 0x00000004 ( add 0 0 4 )
+		pcPlus1 = 4
+		readRegA = 0
+		readRegB = 0
+		offset = 4 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		branchTarget 13
+		eq ? True
+		aluResult = 0 (Don't Care)
+		readRegB = 3 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 75 starts:
+	pc = 13
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 13 (Don't Care)
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 5 (Don't Care)
+		readRegA = 3 (Don't Care)
+		readRegB = 2 (Don't Care)
+		offset = 6 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 8 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 76 starts:
+	pc = 14
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+	ID/EX pipeline register:
+		instruction = 0x01C00000 ( noop )
+		pcPlus1 = 13 (Don't Care)
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 11 (Don't Care)
+		eq ? False (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 2 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x0113000A ( beq 2 3 10 )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 77 starts:
+	pc = 15
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x00000001 ( add 0 0 1 )
+		pcPlus1 = 15
+	ID/EX pipeline register:
+		instruction = 0x01800000 ( halt )
+		pcPlus1 = 14
+		readRegA = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+		offset = 0 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01C00000 ( noop )
+		branchTarget 13 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+
+@@@
+state before cycle 78 starts:
+	pc = 16
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x00000003 ( add 0 0 3 )
+		pcPlus1 = 16
+	ID/EX pipeline register:
+		instruction = 0x00000001 ( add 0 0 1 )
+		pcPlus1 = 15
+		readRegA = 0
+		readRegB = 0
+		offset = 1 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x01800000 ( halt )
+		branchTarget 14 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0 (Don't Care)
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
+Machine halted
+Total of 79 cycles executed
+Final state of machine:
+
+@@@
+state before cycle 79 starts:
+	pc = 17
+	data memory:
+		dataMem[ 0 ] = 0x0081000E
+		dataMem[ 1 ] = 0x0082000F
+		dataMem[ 2 ] = 0x0113000A
+		dataMem[ 3 ] = 0x00000004
+		dataMem[ 4 ] = 0x011C0006
+		dataMem[ 5 ] = 0x009E0010
+		dataMem[ 6 ] = 0x00A70010
+		dataMem[ 7 ] = 0x01370001
+		dataMem[ 8 ] = 0x000D0005
+		dataMem[ 9 ] = 0x000C0004
+		dataMem[ 10 ] = 0x0100FFF9
+		dataMem[ 11 ] = 0x000B0003
+		dataMem[ 12 ] = 0x0100FFF5
+		dataMem[ 13 ] = 0x01800000
+		dataMem[ 14 ] = 0x00000001
+		dataMem[ 15 ] = 0x00000003
+		dataMem[ 16 ] = 0x00000000
+		dataMem[ 17 ] = 0x00000001
+		dataMem[ 18 ] = 0x00000000
+	registers:
+		reg[ 0 ] = 0
+		reg[ 1 ] = 1
+		reg[ 2 ] = 3
+		reg[ 3 ] = 3
+		reg[ 4 ] = 2
+		reg[ 5 ] = 2
+		reg[ 6 ] = 0
+		reg[ 7 ] = 1
+	IF/ID pipeline register:
+		instruction = 0x00000000 ( add 0 0 0 )
+		pcPlus1 = 17
+	ID/EX pipeline register:
+		instruction = 0x00000003 ( add 0 0 3 )
+		pcPlus1 = 16
+		readRegA = 0
+		readRegB = 0
+		offset = 3 (Don't Care)
+	EX/MEM pipeline register:
+		instruction = 0x00000001 ( add 0 0 1 )
+		branchTarget 16 (Don't Care)
+		eq ? True (Don't Care)
+		aluResult = 0
+		readRegB = 0 (Don't Care)
+	MEM/WB pipeline register:
+		instruction = 0x01800000 ( halt )
+		writeData = 0 (Don't Care)
+	WB/END pipeline register:
+		instruction = 0x01C00000 ( noop )
+		writeData = 0 (Don't Care)
+end state
